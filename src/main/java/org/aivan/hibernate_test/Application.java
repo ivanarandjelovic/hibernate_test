@@ -1,6 +1,7 @@
 package org.aivan.hibernate_test;
 
 import java.util.Arrays;
+import java.util.Date;
 import java.util.List;
 
 import org.aivan.hibernate_test.db.ApiRequestService;
@@ -38,6 +39,8 @@ public class Application {
 
 			System.out.println("api service is: " + apiService);
 			assert (apiService != null);
+			
+			apiService.create(new ApiRequest(new Date()));
 
 			System.out.println("START Existing records:");
 			List<ApiRequest> all = apiService.findAll();
